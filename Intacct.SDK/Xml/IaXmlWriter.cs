@@ -314,6 +314,11 @@ namespace Intacct.SDK.Xml
             _writer.WriteAttributeString(localName, val);
         }
 
+        public void WriteDateMMddyyyy(DateTime date)
+        {
+            _writer.WriteRaw(date.ToString("MM/dd/yyyy"));
+        }
+
         public void WriteDateSplitElements(DateTime date, bool writeNull = true)
         {
             WriteElement("year", date.ToString("yyyy"), writeNull);
